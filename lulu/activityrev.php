@@ -13,7 +13,7 @@ if ($total_tuition >= 10000) {
     $discount = $total_tuition * 0.15;
 } elseif ($total_tuition >= 9999) {
     $discount = $total_tuition * 0.10;
-} elseif ($total_tuition >= 5000) {
+} elseif ($total_tuition >= 5000 && 7999.99) {
     $discount = $total_tuition * 0.05;
 } else {
     $discount = 0;
@@ -27,3 +27,4 @@ echo "<br>Discount Applied: $discount";
 echo "<br>Final Tuition to Pay: $final_tuition";
 
 ?>
+
