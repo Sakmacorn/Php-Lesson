@@ -19,14 +19,11 @@
         <?php
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
             $fullname = $_POST['fullname'];
-            $email = $_POST['email'];
-            $address = $_POST['address'];
-            $birthdate = $_POST['birthdate'];
-            $course = $_POST['course'];
-            $gender = $_POST['gender'];
-            
+            $TotalDay = $_POST['totaldays'];
+            $dailyrate = $_POST['dailyrate'];
+            $cashAdvance = $_POST['cashAdvance'];
+
         } else {
             echo"<div class='alert alert-danger'>No data submitted.</div>";
         }
@@ -34,12 +31,11 @@
             <p class="lead">Here are the details you submitted:</p>
            
             <ul class="list-group">
-                <li class="list-group-item"><strong>Full Name:</strong> <?=$fullname?> </li>
-                <li class="list-group-item"><strong>Email:</strong> <?=$email?> </li>
-                <li class="list-group-item"><strong>Address:</strong> <?=$address?> </li>
-                <li class="list-group-item"><strong>Birthdate:</strong> <?=$birthdate?> </li>
-                <li class="list-group-item"><strong>Course:</strong> <?=$course?> </li>
-                <li class="list-group-item"><strong>Gender:</strong> <?=$gender?> </li>
+                <li class="list-group-item"><strong>Employee Name:</strong>  </li>
+                <li class="list-group-item"><strong>Total Days of Work:</strong> </li>
+                <li class="list-group-item"><strong>Dailt Rate:</strong>  </li>
+                <li class="list-group-item"><strong>Cash Advance:</strong>  </li>
+
             </ul>
 
             <div class="mt-4">

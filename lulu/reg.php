@@ -12,56 +12,32 @@
 <div class="container mt-5">
     <div class="card shadow-lg">
         <div class="card-header bg-primary text-white">
-            <h4 class="mb-0">Student Registration</h4>
+            <h4 class="mb-0">Payroll Calculator</h4>
         </div>
         <div class="card-body">
             <form action="computereg.php" method="POST">
-                <!-- Full Name -->
+                <!-- Employee Name -->
                 <div class="mb-3">
-                    <label for="fullname" class="form-label">Full Name</label>
-                    <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter your full name" required >
+                    <label for="fullname" class="form-label">Employee Name</label>
+                    <input type="text" name="fullname" id="fullname" class="form-control" placeholder="Enter your Employee Name" required >
                 </div>
 
-                <!-- Email -->
+                <!-- Days of Work -->
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email Address</label>
-                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    <label for="TotalDay" class="form-label">Total Days of Work</label>
+                    <input type="number" name="totaldays" id="totaldays" class="form-control" placeholder="Enter your Total Days of Work" required>
                 </div>
 
-                <!-- Address -->
+                <!-- Daily Rate -->
                 <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
-                    <textarea name="address" id="address" class="form-control" rows="2" placeholder="Enter your address" required></textarea>
+                    <label for="dailyrate" class="form-label">Daily Rate</label>
+                    <input type="number" name="dailyrate" id="dailyrate" class="form-control" placeholder="Enter your Daily Rate" required>
                 </div>
 
-                <!-- Birthdate -->
+                <!-- Cash Advance -->
                 <div class="mb-3">
-                    <label for="birthdate" class="form-label">Birthdate</label>
-                    <input type="date" name="birthdate" id="birthdate" class="form-control" required>
-                </div>
-
-                <!-- Course -->
-                <div class="mb-3">
-                    <label for="course" class="form-label">Course</label>
-                    <select name="course" id="course" class="form-select" required>
-                        <option value="">-- Select Course --</option>
-                        <option value="ACT">ACT - Associate in Computer Technology</option>
-                        <option value="CT">CT - Computer Technology</option>
-                        <option value="BSOA">BSOA - Bachelor of Science in Office Administration</option>
-                    </select>
-                </div>
-
-                <!-- Gender -->
-                <div class="mb-3">
-                    <label class="form-label">Gender</label><br>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" required>
-                        <label class="form-check-label" for="male">Male</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
-                        <label class="form-check-label" for="female">Female</label>
-                    </div>
+                    <label for="cashadvance" class="form-label">Cash Advance</label>
+                    <input type="number" name="cashAdvance" id="CashAdvance" class="form-control" placeholder="Enter your Cash Advance" required>
                 </div>
 
                 <!-- Submit Button -->
