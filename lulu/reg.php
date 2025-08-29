@@ -31,18 +31,24 @@
                 <!-- Daily Rate -->
                 <div class="mb-3">
                     <label for="dailyrate" class="form-label">Daily Rate</label>
-                    <input type="number" name="dailyrate" id="dailyrate" class="form-control" placeholder="Enter your Daily Rate" required>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" name="dailyrate" id="dailyrate" class="form-control" placeholder="Enter your Daily Rate" required>
+                    </div>
                 </div>
 
                 <!-- Cash Advance -->
                 <div class="mb-3">
                     <label for="cashadvance" class="form-label">Cash Advance</label>
-                    <input type="number" name="cashAdvance" id="CashAdvance" class="form-control" placeholder="Enter your Cash Advance" required>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" name="cashAdvance" id="CashAdvance" class="form-control" placeholder="Enter your Cash Advance" required>
+                    </div>
                 </div>
 
                 <!-- Submit Button -->
                 <div class="text-end">
-                    <button type="submit" class="btn btn-success">Register</button>
+                    <button type="submit" class="btn btn-success">Generate Payslip</button>
                 </div>
             </form>
         </div>
