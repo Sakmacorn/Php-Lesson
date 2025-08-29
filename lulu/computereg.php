@@ -12,7 +12,7 @@
 <div class="container mt-5">
     <div class="card shadow-lg">
         <div class="card-header bg-success text-white">
-            <h4 class="mb-0">Registration Successful</h4>
+            <h4 class="mb-0">Employee Payslip</h4>
         </div>
         <div class="card-body">
        
@@ -20,26 +20,50 @@
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $fullname = $_POST['fullname'];
-            $TotalDay = $_POST['totaldays'];
+            $totalDay = $_POST['totaldays'];
             $dailyrate = $_POST['dailyrate'];
             $cashAdvance = $_POST['cashAdvance'];
+
+            $GrossPay = $totalDay * $dailyrate;
+            $tax = $GrossPay * 0.02;
+            $sss = $GrossPay * 0.015;
+            $pagibig = 50;
+            $totalDeduction = $tax + $sss + $pagibig + $cashAdvance;
+            $netPay = $GrossPay - $totalDeduction;
+
 
         } else {
             echo"<div class='alert alert-danger'>No data submitted.</div>";
         }
         ?>
-            <p class="lead">Here are the details you submitted:</p>
+
            
             <ul class="list-group">
-                <li class="list-group-item"><strong>Employee Name:</strong>  </li>
-                <li class="list-group-item"><strong>Total Days of Work:</strong> </li>
-                <li class="list-group-item"><strong>Dailt Rate:</strong>  </li>
-                <li class="list-group-item"><strong>Cash Advance:</strong>  </li>
-
+                <li class="list-group-item"><strong>Employee Name:</strong> <?php echo $fullname; ?>  </li>
+                <li class="list-group-item"><strong>Total Days of Work:</strong> <?php echo $totalDay; ?> </li>
+                <li class="list-group-item"><strong>Daily Rate:</strong> <?php echo "$" . number_format($dailyrate, 2); ?> </li>
             </ul>
+            <hr>
+
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Gross Pay:</strong> <?php echo "$" . number_format($GrossPay, 2);?> </li>
+                <li class="list-group-item"><strong>Tax (2%):</strong> <?php echo "$" . number_format($tax, 2);?> </li>
+                <li class="list-group-item"><strong>SSS (1.5%):</strong> <?php echo "$" . number_format($sss, 2); ?>  </li>
+                <li class="list-group-item"><strong>Pag-IBIG:</strong> <?php echo "$" . number_format($pagibig, 2); ?>  </li>
+                <li class="list-group-item"><strong>Cash Advance:</strong> <?php echo "$" . number_format($cashAdvance, 2); ?>  </li>
+            </ul>
+            <hr>
+
+            <ul class="list-group">
+                <li class="list-group-item"><strong>Total Deduction:</strong> <?php echo "$" . number_format($totalDeduction, 2); ?>  </li>
+                <li class="list-group-item"><strong>Net Pay:</strong> <?php echo "$" . number_format($netPay, 2); ?>   </li>
+            </ul>
+            <hr>
+
+
 
             <div class="mt-4">
-                <a href="reg.php" class="btn btn-primary">Register Another Student</a>
+                <a href="reg.php" class="btn btn-primary">Back</a>
             </div>
         </div>
     </div>
