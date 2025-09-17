@@ -78,3 +78,42 @@
 </div>
 </body>
 </html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+<body>
+    <h2>Select your favorite items</h2>
+    <form action="" method="post">
+        <input type="checkbox" name="items[]" id="" value="50"> Notebook (₱50.00)<br>
+        <input type="checkbox" name="items[]" id="" value="30"> Ballpen (₱30.00)<br>
+        <input type="checkbox" name="items[]" id="" value="100"> Bag (₱100.00)<br>
+        <input type="checkbox" name="items[]" id="" value="75"> Shoes (₱75.00)<br>
+        <input type="checkbox" name="items[]" id="" value="20"> Pencil (₱20.00)<br>
+        <input type="checkbox" name="items[]" id="" value="25"> Eraser (₱25.00)<br><br>
+        <input type="submit" value="Submit" name="submit"><br>
+    </form>
+    <?php
+        if (isset($_POST['submit'])){
+            if(!empty($_POST['items'])){
+                $total = 0; 
+                echo"<h3>You selected:</h3>";
+                foreach($_POST['items'] as $price){
+                    echo"₱".number_format($price,2)."<br>"; 
+                    $total += $price;
+                }
+                echo"<h3>Total: ₱".number_format($total,2)."<h3>";
+            } 
+        }
+        else {
+            echo"<p>Please select at least one product.</p>";
+        }
+        
+    ?>
+</body>
+</html>
