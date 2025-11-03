@@ -1,0 +1,36 @@
+  body {
+      background-color: #faecec;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .btn-login {
+      background-color: #cf8888;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn-login:hover {
+      background-color: #b86e6e;
+    }
+
+    .show-password-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 5px;
+      justify-content: flex-start;
+    }
+
+    .show-password-container input[type="checkbox"] {
+      cursor: pointer;
+      accent-color: #cf8888;
+    }
+
+    .footer-links a {
+      color: #7a5b5b;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
