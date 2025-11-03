@@ -24,6 +24,20 @@
 
     <div class="container mt-5">
         <h3 class="section-title">Stock Management</h3>
+
+        <!-- Search & Filter -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <!-- Search Bar -->
+            <input type="text" id="searchInput" class="form-control w-50" placeholder="Search product...">
+
+            <!-- Filter Dropdown -->
+            <select id="categoryFilter" class="form-select w-25">
+                <option value="">All Categories</option>
+                <option value="Makeup">Makeup</option>
+                <option value="Cosmetics">Cosmetics</option>
+            </select>
+        </div>
+
         <table class="table stock-table">
             <thead>
                 <tr>
@@ -34,7 +48,7 @@
                     <th>Action</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="stockTableBody">
                 <tr>
                     <td>Lip Gloss</td>
                     <td>Makeup</td>
@@ -52,6 +66,36 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const tableBody = document.getElementById('stockTableBody');
+
+        function filterTable() {
+            const searchValue = searchInput.value.toLowerCase();
+            const categoryValue = categoryFilter.value.toLowerCase();
+
+            Array.from(tableBody.rows).forEach(row => {
+                const productName = row.cells[0].textContent.toLowerCase();
+                const category = row.cells[1].textContent.toLowerCase();
+
+                const matchesSearch = productName.includes(searchValue);
+                const matchesCategory = categoryValue === "" || category === categoryValue;
+
+                if (matchesSearch && matchesCategory) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterTable);
+        categoryFilter.addEventListener('change', filterTable);
+    </script>
+
+
 </body>
 
 </html>
